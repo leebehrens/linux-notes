@@ -1,6 +1,10 @@
 ---
 title: Connecting Git to GitHub
+layout: note
+date: 2022-03-19
+tags: git,ssh
 ---
+
 ## Configuring Git
 
 1. `$ git config --global user.name "Your Name"`
