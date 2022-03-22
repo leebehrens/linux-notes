@@ -8,3 +8,7 @@ layout: default
 - [Debian 11 (Buster) on a Lenovo Thinkpad T470](notes/debian11.html)
 - [Connecting Git to GitHub](notes/connecting-git-to-github.html)
 - [Visual Studio Code](notes/vscode.html)
+
+{% for notes in site.notes %}
+    - {{note.title}}
+{% endfor %}

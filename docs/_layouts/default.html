@@ -34,5 +34,12 @@
         {{ content }}
       </section>
     </div>
+
+    {% if page.date %}
+      <div class="container">
+        <hr/>
+        <section class="footer">Rev. {{ page.date }}</section>
+      </div>
+    {% endif %}
   </body>
 </html>
