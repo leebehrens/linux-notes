@@ -22,7 +22,7 @@ title: Lee's Linux Notes
 email: your-email@example.com
 # description: >- # this means to ignore newlines until "baseurl:"
 #   My GitHub goodies
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/linux-notes" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 # github_username:  jekyll
@@ -67,5 +67,5 @@ plugins:
 # paginate: 5
 # paginate_path: "/note/page:num"
 
-note: "> <span style=\"color: #3878fa\"><span style=\"font-size: 2em\">🛈</span> **Note**</span> "
-caution: "> <span style=\"color: #f9f1a5\"><span style=\"font-size: 2em\">⚠</span> **Caution**</span> "
+callout_note: "> <span style=\"color: #3878fa\"><span style=\"font-size: 2em\">🛈</span> **Note**</span> "
+callout_caution: "> <span style=\"color: #f9f1a5\"><span style=\"font-size: 2em\">⚠</span> **Caution**</span> "

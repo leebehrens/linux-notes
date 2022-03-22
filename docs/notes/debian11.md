@@ -24,7 +24,7 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
 
 1. In a browser open [http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/amd64/iso-cd/](http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/amd64/iso-cd/)
 
-    {{site.note}} At the time of this writing the current version is Debian 11.1. Versions previous to current can be found by going to [http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/](http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/) ➤ `<version>+nonfree/` ➤ `amd64/` ➤ `iso-cd/` |
+    {{site.callout_note}} At the time of this writing the current version is Debian 11.1. Versions previous to current can be found by going to [http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/](http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/) ➤ `<version>+nonfree/` ➤ `amd64/` ➤ `iso-cd/` |
 
 2. Scroll to the bottom of the page and download
     - firmware-11.1.0-amd64-netinst.iso
@@ -44,7 +44,7 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
     $ sudo umount /dev/sdb1
     ```
 
-    {{site.caution}} Make sure you choose the correct drive!
+    {{site.callout_caution}} Make sure you choose the correct drive!
 
 6. ```shell
     $ sudo mkfs.vfat /dev/sdb -I
@@ -72,7 +72,7 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
 
     1. Primary network interface: *(wired interface)*
 
-        {{site.caution}} Use a wired network interface even if you have a wireless interface. If you choose wireless, you will be asked to choose the wireless network SSID, encryption method, and password per expected usual. The install will complete smoothly. However, once the system boots you are likely to find that you can't access the internet with any kind of connection. Unable to get the network working, I had to resort to reinstalling using the wired interface.
+        {{site.callout_caution}} Use a wired network interface even if you have a wireless interface. If you choose wireless, you will be asked to choose the wireless network SSID, encryption method, and password per expected usual. The install will complete smoothly. However, once the system boots you are likely to find that you can't access the internet with any kind of connection. Unable to get the network working, I had to resort to reinstalling using the wired interface.
 
     2. Hostname: *(debian is the default)*
 
@@ -98,27 +98,27 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
 
     1. Partitioning method: *Guided – use entire disk*
 
-        {{site.note}} If you choose *Guided – use entire disk and set up encrypted LVM*, you will have to provide the encryption passphrase every time you start your system.
+        {{site.callout_note}} If you choose *Guided – use entire disk and set up encrypted LVM*, you will have to provide the encryption passphrase every time you start your system.
 
     2. Select disk to partition
 
-        {{site.warning}} Be careful to choose the correct disk!
+        {{site.callout_caution}} Be careful to choose the correct disk!
 
     3. Partitioning scheme: All files in one partition (recommended for new users) (default)
 
-        {{site.note}} I looked at the various paritioning schemes, and ultimatly decided there wasn't enough benefit to me to use one of the multi-partition schemes.
+        {{site.callout_note}} I looked at the various paritioning schemes, and ultimatly decided there wasn't enough benefit to me to use one of the multi-partition schemes.
 
     4. This is an overview of your currently configured partitions and mount points: *Finish partitioning and write changes to disk*
 
     5. Write changes to disk? *Yes* (default)
 
-        {{site.caution}} This is your last chance before your drive is wiped!
+        {{site.callout_caution}} This is your last chance before your drive is wiped!
 
     **With encryption**
 
     1. Partitioning method: Guided – use entire disk and set up encrypted LVM
 
-        {{site.note}} You will have to provide the encryption passphrase every time you start your system.
+        {{site.callout_note}} You will have to provide the encryption passphrase every time you start your system.
 
     2. Select disk to partition (be careful to choose the correct one!)
 
@@ -126,7 +126,7 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
 
     4. Write changes to disks and configure LVM? *Yes*
 
-        {{site.caution}} This is your last chance before your drive is wiped!
+        {{site.callout_caution}} This is your last chance before your drive is wiped!
 
     5. Your drive is filled with random data. This will take a while.
 
@@ -156,11 +156,11 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
 
     1. Unselect all but standard system utilities
 
-        {{site.note}} Selecting a desktop environment now installs more software than if you install it later. Also, the desktop environment seems to be more tightly coupled to the base system, which may cause issues should you decide to install a different desktop environment.
+        {{site.callout_note}} Selecting a desktop environment now installs more software than if you install it later. Also, the desktop environment seems to be more tightly coupled to the base system, which may cause issues should you decide to install a different desktop environment.
 
     2. Finish installation (click Continue to reboot)
 
-        {{site.note}} Keep the network cable connected.
+        {{site.callout_note}} Keep the network cable connected.
 
 14. Login using your username and password
 
