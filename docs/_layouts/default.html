@@ -29,17 +29,18 @@
       </div>
     </header>
 
-    <div class="container">
+    <div class="footer">
       <section id="main_content">
         {{ content }}
       </section>
     </div>
 
-    {% if page.date %}
-      <div class="container">
+    {%- if page.tags or page.date -%}
+      <div class="container footer">
         <hr/>
-        <section class="footer">Rev. {{ page.date }}</section>
+        {% if page.tags %}<section class="tags">tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></section>{% endif %}
+        {% if page.date %}<section class="revision">Rev. {{ page.date | date: "%Y-%m-%d" }}</section>{% endif %}
       </div>
-    {% endif %}
+    {%- endif -%}
   </body>
 </html>

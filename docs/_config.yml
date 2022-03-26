@@ -67,5 +67,9 @@ plugins:
 # paginate: 5
 # paginate_path: "/note/page:num"
 
+collections:
+  notes:
+    output: true
+
 callout_note: "> <span style=\"color: #3878fa\"><span style=\"font-size: 2em\">🛈</span> **Note**</span> "
 callout_caution: "> <span style=\"color: #f9f1a5\"><span style=\"font-size: 2em\">⚠</span> **Caution**</span> "

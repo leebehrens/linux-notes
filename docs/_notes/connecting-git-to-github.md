@@ -2,7 +2,7 @@
 title: Connecting Git to GitHub
 layout: note
 date: 2022-03-19
-tags: git,ssh
+tags: git ssh email
 ---
 
 ## Configuring Git
