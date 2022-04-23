@@ -91,6 +91,8 @@ A .deb package is available to automatically install the apt repository and sign
 
     "telemetry.telemetryLevel": "off",
 
+    "terminal.integrated.sendKeybindingsToShell": true,
+
     "workbench.colorCustomizations": {
         "sash.hoverBorder": "#b5bd68",
         "terminal.ansiBlack": "#0c0c0c",

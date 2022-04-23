@@ -171,38 +171,44 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
     This will likely show no updates. If you get an error at this point you probably tried to install using wireless network. If that is what you did, you might as well go back to Step 1.
 
 16. ```shell
+    sudo apt install intel-microcode
+    ```
+
+    This installs any Intel CPU microcode updates not already installed as part of a BIOS/UEFI patch.
+
+17. ```shell
     $ sudo apt install firmware-misc-nonfree
     ```
 
     This is the i915 driver for the Intel HD 520. When I installed Debian 10 it seemed that the driver was not fully installed or configured, so I did the same for Debian 11.
 
-17. ```shell
+18. ```shell
     $ sudo apt install kde-plasma-desktop
     ```
 
-18. ```shell
+19. ```shell
     $ sudo apt install plasma-nm
     ```
 
     This is the KDE network monitor.
 
-19. ```shell
+20. ```shell
     $ sudo apt install laptop-mode-tools
     ```
 
     This includes a power usage optimizer. TLP used to be required for Thinkpads, but no more.
 
-20. ```shell
+21. ```shell
     $ sudo apt install smartmontools
     ```
 
     This is drive monitoring tools. It is probably already installed, but it doesn't hurt to install it again.
 
-21. ```shell
+22. ```shell
     $ sudo reboot
     ```
 
-22. You can now unplug the ethernet cable.
+23. You can now unplug the ethernet cable.
 
 ## References
 - https://www.pragmaticlinux.com/2020/10/install-a-minimal-kde-on-debian-10-buster/

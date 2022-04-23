@@ -29,18 +29,19 @@
       </div>
     </header>
 
-    <div class="footer">
+    <div class="container">
       <section id="main_content">
         {{ content }}
       </section>
     </div>
 
-    {%- if page.tags or page.date -%}
-      <div class="container footer">
+
+      <div class="footer">
         <hr/>
-        {% if page.tags %}<section class="tags">tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></section>{% endif %}
+        {% if page.tags.size > 0 %}<section class="tags">tags: {{ page.tags | join: ", " }}</section>{% endif %}
+        {% if page.name != "about.md" %}<section class="about"><a href="{{'/about' | relative_url}}">About</a></section>{% endif %}
         {% if page.date %}<section class="revision">Rev. {{ page.date | date: "%Y-%m-%d" }}</section>{% endif %}
       </div>
-    {%- endif -%}
+
   </body>
 </html>
