@@ -3,6 +3,8 @@ title: DBeaver (community edition)
 layout: note
 date: 2022-04-23
 ---
+Free universal database tool and SQL client
+
 ## Download and install
 
 1. In a browser, visit [https://dbeaver.io/](https://dbeaver.io/)
