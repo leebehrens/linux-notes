@@ -2,7 +2,6 @@
 title: DBeaver (community edition)
 layout: note
 date: 2022-04-23
-tags:
 ---
 ## Download and install
 
