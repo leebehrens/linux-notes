@@ -8,3 +8,7 @@ published: false
 ---
 
 This is a test.
+
+{{site.callout_note}} At the time of this writing...
+
+{{site.callout_caution}} Make sure you choose the correct drive!
