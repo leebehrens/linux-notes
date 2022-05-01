@@ -130,7 +130,7 @@ also work.)
 
 2. KDE clock in System Tray: the date should be in DD/MM/YYYY form and the time in HH:MM form
 
-3. Linux: the `date` command should show the date and time in DD MMM YYYY HH:MM:SS order
+3. Linux: the `date` command should show the date and time in `day YYYY-MM-DD HH:MM:SS` order
     ```
     $ date
     ```
