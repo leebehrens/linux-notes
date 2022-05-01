@@ -4,22 +4,13 @@ layout: note
 date: 2022-04-28
 ---
 
-Changing date and time format can be quirky.
+Changing date and time format to can be quirky.
 
 I  prefer my system use the following formats:
 - Date: YYYY-MM-DD preferred, with DMY order as a fallback
 - Time: 24-hour format
 
-{{site.callout_note}} Achieving this systemwide turns out to be less easy
-than it should be, in part because KDE and Linux support their own sets
-of locales with side effects between the two.
-
-{{site.callout_note}} I have not found a way to set the date format to
-YYYY-MM-DD everywhere, hence the DMY order as a fallback.
-
-{{site.callout_note}} My web searches consistently turned up using the
-en_DK locale for time formatting, but that results in times formatted as HH.MM
-(dot separator). After hunting I found that en_IL yields HH:MM (colon separator).
+{{site.callout_note}} Achieving this systemwide turns out to be less easy than it should be, in part because KDE and Linux support their own sets of locales with side effects between the two.
 
 ## `ls` timestamp format
 
@@ -45,14 +36,56 @@ en_DK locale for time formatting, but that results in times formatted as HH.MM
 messages when various commonly used commands are run (e.g., `man`, `apt install`,
 etc.).
 
-1. Update available locales
+1. Create the World (io_001) locale file
+    ```shell
+    $ cd /etc/share/i18n/locales
+    $ sudo cp en_US io_001
+    $ sudo nano io_001
+    ```
+
+2. Make the following changes to `io_001`, in the `LC_TIME` section. (`% !!` mark the original lines and may be omitted.)
+    ```
+    % Appropriate date and time representation (%c)
+    % !!	d_t_fmt "%a %d %b %Y %r %Z"
+    d_t_fmt	"%a %d %b %Y %T"
+    %
+    % Appropriate date representation (%x)
+    % !!	d_fmt   "%m//%d//%Y"
+    d_fmt	"%Y-%m-%d"
+    %
+    % Appropriate time representation (%X)
+    % !!	t_fmt   "%r"
+    t_fmt "%T"
+    %
+    % Appropriate AM/PM time representation (%r)
+    % !!	t_fmt_ampm "%I:%M:%S %p"
+    t_fmt_ampm	"%T"
+    %
+    % Appropriate date and time representation for date(1)
+    % !!	date_fmt "%a %d %b %Y %r %Z"
+    date_fmt	"%a %x %T"
+    %
+    % Strings for AM/PM
+    % !!	am_pm	"AM";"PM"
+    am_pm	"";""
+    ```
+
+    {{site.callout_note}} As indicated above, `date_fmt` is the default format for the `date` command. `%T` is equivalent to `%H:%M:%S` (two-digit hour, minute, second).
+
+3. Update available locales
     ```shell
     $ sudo nano /etc/locale.gen
     ```
 
-2. Uncomment (remove the leading #) from the line `en_IL UTF-8` and save.
+<!--
+4. Uncomment (remove the leading #) from the line `en_IL UTF-8` and save.
+-->
+4. At the end of the file add this line
+    ```
+    io_001 UTF-8
+    ```
 
-3. Regenerate locales
+5. Regenerate locales
     ```shell
     $ sudo locale-gen
     ```
@@ -63,9 +96,30 @@ etc.).
 
 2. Check Detailed Settings
 
-3. Change Time to Israel - English (en_IL)
+3. Change Time to World (io_001) <!-- Israel - English (en_IL) -->
 
 4. Click Apply
+
+## KDE lock screen date formatting
+
+1. Edit the lockscreen theme file
+    ```shell
+    $ cd /usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/components
+    $ sudo nano Clock.qml
+    ```
+
+2. Find the line containing
+    ```
+    text: Qt.formatDate(timeSource.data["Local"]["DateTime"], "yyyy-MM-dd (ddd)")   // Qt.DefaultLocaleLongDate)
+    ```
+    and change it to
+    ```
+    text: Qt.formatDate(timeSource.data["Local"]["DateTime"], "yyyy-MM-dd (ddd)")   // Qt.DefaultLocaleLongDate)
+    ```
+
+## KDE login screen
+
+{{site.callout_note}} I have not yet discovered how to change the date format on the KDE login screen.
 
 ## Activating the changes and trying them out
 
