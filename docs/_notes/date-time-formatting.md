@@ -4,7 +4,7 @@ layout: note
 date: 2022-04-28
 ---
 
-Changing date and time format to can be quirky.
+Changing date and time format can be quirky.
 
 I  prefer my system use the following formats:
 - Date: YYYY-MM-DD preferred, with DMY order as a fallback

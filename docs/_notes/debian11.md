@@ -176,6 +176,8 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
 
     This installs any Intel CPU microcode updates not already installed as part of a BIOS/UEFI patch.
 
+    {{site.callout_note}} This might not be necessary if fwupd is installed and used. Refer to Lenovo firmware update release notes.
+
 17. ```shell
     $ sudo apt install firmware-misc-nonfree
     ```
