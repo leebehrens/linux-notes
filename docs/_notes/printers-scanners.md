@@ -70,7 +70,7 @@ The instructions here were tested with an ET-3850.
 
 3. Right-click on desired printer, choose Properties
 
-4. Adjust properties as desired, and click OK
+4. Adjust properties and print test page as desired, and click OK
 
 
 ## Installation: HP all-in-one models
