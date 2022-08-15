@@ -127,3 +127,4 @@ The instructions here were tested with an OfficeJet Pro 8600 and an OfficeJet 69
 
 ## References
 - https://ccm.net/faq/39414-linux-debian-how-to-install-a-printer
+- https://epson.com/Support/wa00821
