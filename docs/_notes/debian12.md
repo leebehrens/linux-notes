@@ -199,12 +199,20 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
     $ sudo apt install laptop-mode-tools
     ```
 
-18. You can no unplug the ethernet cable and reboot.
-    ```shell```
+18. You can now unplug the ethernet cable and reboot.
+    ```shell
     $ sudo reboot
     ```
 
 19. Login and enjoy!
+
+## Notes
+
+Now that Debian includes non-free firmware by default, the following packages are installed by default:
+- firmware-misc-nonfree: i915 driver for Intel HD 520 integrated GPU
+- intel-microcode: Intel CPU microcode updates not already installed as part of a BIOS/UEFI patch
+- plasma-nm: KDE Plasma network monitoring
+- smartmontools: SMART drive monitoring tools
 
 ## References
 - [Installing Debian 11 (Bullseye) on a Lenovo Thinkpad T470](debian11)
