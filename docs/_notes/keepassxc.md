@@ -6,7 +6,11 @@ date: 2022-03-22
 
 Password management
 
-## Installation
+## Installation using Flatpak
+
+
+
+## Installation using AppImage
 
 1. In a browser, visit [https://keepassxc.org/](https://keepassxc.org/)
 

@@ -27,7 +27,7 @@ $ nano ~/.config/neofetch/config.conf
 
 The configuration file contains instructions on where to find more information about various configuration options.
 
-As an example, the color block range default is only 8 of the available 16, and is easily changed by adjusting `block_range`.
+As an example, the color block range is sometimes set to 8 of the available 16, and is easily changed by adjusting `block_range`.
 ```conf
 # Color block range
 # The range of colors to print.

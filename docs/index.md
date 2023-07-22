@@ -15,8 +15,13 @@ console.log("--tag--");
 var mytag = getTagParameter();
 console.log(mytag);
 
-console.log("--notes by tag--");
-var mynotes = getNotesByTag(mytag);
+console.log("--notes by tag, pinned--");
+var mynotes = getNotesByTag(mytag, true);
+console.log(mynotes.length);
+mynotes.forEach(note => console.log(note.title, note.tags));
+
+console.log("--notes by tag, not pinned--");
+var mynotes = getNotesByTag(mytag, false);
 console.log(mynotes.length);
 mynotes.forEach(note => console.log(note.title, note.tags));
 
@@ -82,7 +87,19 @@ mynotes.forEach(note => console.log(note.title, note.tags));
       delim = " | ";
     });
 
-    let myNotes = getNotesByTag(myTag == starTag ? "" : myTag);
+    let myNotes = getNotesByTag(myTag == starTag ? "" : myTag, true );
+
+    myNotes.forEach(note => {
+      let liNode = document.createElement("li");
+      let aNode = document.createElement("a");
+      aNode.setAttribute("href", note.url);
+      aNode.append(note.title);
+      liNode.append(aNode);
+      liNode.append(document.createElement("br"));
+      liNode.append(note.excerpt);
+      noteslist.append(liNode);
+
+    let myNotes = getNotesByTag(myTag == starTag ? "" : myTag, false );
 
     myNotes.forEach(note => {
       let liNode = document.createElement("li");

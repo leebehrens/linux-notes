@@ -32,8 +32,8 @@ var getTagParameter = function() {
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
-var getNotesByTag = function(tag) {
+var getNotesByTag = function(tag, pinned) {
     return tag
-        ? notes.filter(note => { return note.tags.indexOf(tag) >= 0 })
-        : notes;
+        ? notes.filter(note => { return note.tags.indexOf(tag) >= 0 && note.pinned == pinned })
+        : notes.filter(note => { return note.pinned == pinned});
 }

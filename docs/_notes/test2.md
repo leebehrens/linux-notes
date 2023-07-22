@@ -1,11 +1,11 @@
 ---
-title: https://test & so on
+title: test2
 layout: note
 date: 2022-03-22
 tags: test
 excerpt: Hi there! \n <grin> &amp; "bear" it
 published: true
-pinned: true
+pinned:
 ---
 
 This is a test. (If excerpt is not set in the header, the first paragraph is used.)

@@ -3,10 +3,14 @@ title: Firmware update
 layout: note
 date: 2022-05-13
 tags: hardware thinkpad t470
+excerpt:
 ---
+
 
 How to update firmware using `fwupd`. The alternative is to check hardware
 vendors' websites for the appropriate firmware and installers.
+
+{{site.callout_caution}} I used this once on Debian 11 and found my Thinkpad T470 temporarily bricked. It might be better to use Lenovo's bootable updating utility.
 
 ## Installing
 
@@ -42,8 +46,6 @@ $ sudo apt install fwupd
     applying any updates.
 
 5. Reboot to apply any updates requiring a reboot
-
-{{site.callout_caution}}
 
 6. Review application of updates
     ```shell

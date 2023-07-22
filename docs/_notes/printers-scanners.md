@@ -10,7 +10,7 @@ Tip: Assign fixed IP addresses for all network printers on the router. This can 
 
 ## Installation: CUPS, Skanlite (all printers)
 
-1. Install CUPS. `$ sudo apt list cups` may indicate CUPS is installed, but not all required packages are
+1. Install CUPS. `$ sudo apt list cups` may indicate CUPS is installed, but not all required packages are.
     ```shell
     $ sudo apt install cups
     ```
