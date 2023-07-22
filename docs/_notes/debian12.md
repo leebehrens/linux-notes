@@ -2,9 +2,9 @@
 title: Installing Debian 12 (Bookworm) on a Lenovo Thinkpad T470
 layout: note
 date: 2022-07-04
+excerpt: I upgraded from Debian 11 (Bullseye) via full installation, to clean out a bunch of cruft I had accumulated.
 ---
 
-2021-12-05 I upgraded from Debian 10 (Buster) via full installation.
 2023-07-04 I upgraded from Debian 11 (Bullseye) via full installation, to clean out a bunch of cruft I had accumulated.
 
 ## What you'll need
@@ -207,5 +207,5 @@ Although I didn't, it probably doesn't hurt to backup some system config files, 
 19. Login and enjoy!
 
 ## References
-- [Installing Debian 11 (Bullseye) on a Lenovo Thinkpad T470](debian12)
+- [Installing Debian 11 (Bullseye) on a Lenovo Thinkpad T470](debian11)
 - https://www.pragmaticlinux.com/2020/10/install-a-minimal-kde-on-debian-10-buster/

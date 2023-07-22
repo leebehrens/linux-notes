@@ -2,6 +2,7 @@
 title: Installing Debian 11 (Bullseye) on a Lenovo Thinkpad T470
 layout: note
 date: 2022-03-19
+excerpt: I upgraded from Debian 10 (Buster) via full installation.
 ---
 
 2021-12-05 I upgraded from Debian 10 (Buster) via full installation.
