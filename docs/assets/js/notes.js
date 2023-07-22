@@ -17,8 +17,7 @@ var notes = [
         "date": "{{note.date | date: "%Y-%m-%d"}}",
         "size": {{note.content.size}},
         "excerpt": "{{excerpt}}",
-        "tags": [{%- if note.tags.size > 0 -%}"{{note.tags | join: '", "'}}"{%- endif -%}],
-        "pinned": "{{%- if note.pinned == true -%}true{%- else -%}false{%- endif -%}}"
+        "tags": [{%- if note.tags.size > 0 -%}"{{note.tags | join: '", "'}}"{%- endif -%}]
     }
     {%- assign comma = "," -%}
 {%- endfor -%}
@@ -33,8 +32,8 @@ var getTagParameter = function() {
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
-var getNotesByTag = function(tag, pinned) {
+var getNotesByTag = function(tag) {
     return tag
-        ? notes.filter(note => { return note.tags.indexOf(tag) >= 0 && note.pinned == pinned })
-        : notes.filter(note => { return note.pinned == pinned});
+        ? notes.filter(note => { return note.tags.indexOf(tag) >= 0 })
+        : notes;
 }

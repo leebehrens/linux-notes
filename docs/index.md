@@ -87,30 +87,35 @@ mynotes.forEach(note => console.log(note.title, note.tags));
       delim = " | ";
     });
 
-    let myNotes = getNotesByTag(myTag == starTag ? "" : myTag, true );
+    let myNotes = getNotesByTag(myTag == starTag ? "" : myTag);
 
     myNotes.forEach(note => {
-      let liNode = document.createElement("li");
-      let aNode = document.createElement("a");
-      aNode.setAttribute("href", note.url);
-      aNode.append(note.title);
-      liNode.append(aNode);
-      liNode.append(document.createElement("br"));
-      liNode.append(note.excerpt);
-      noteslist.append(liNode);
-
-    let myNotes = getNotesByTag(myTag == starTag ? "" : myTag, false );
+      if (note.pinned) {
+        let liNode = document.createElement("li");
+        let aNode = document.createElement("a");
+        aNode.setAttribute("href", note.url);
+        aNode.append(note.title);
+        liNode.append(aNode);
+        liNode.append(document.createElement("br"));
+        liNode.append(note.excerpt);
+        noteslist.append(liNode);
+      }
+    }
 
     myNotes.forEach(note => {
-      let liNode = document.createElement("li");
-      let aNode = document.createElement("a");
-      aNode.setAttribute("href", note.url);
-      aNode.append(note.title);
-      liNode.append(aNode);
-      liNode.append(document.createElement("br"));
-      liNode.append(note.excerpt);
-      noteslist.append(liNode);
-    });
+      unless (note.pinned) {
+        let liNode = document.createElement("li");
+        let aNode = document.createElement("a");
+        aNode.setAttribute("href", note.url);
+        aNode.append(note.title);
+        liNode.append(aNode);
+        liNode.append(document.createElement("br"));
+        liNode.append(note.excerpt);
+        noteslist.append(liNode);
+      }
+    }
+
+    );
 
   }
 
