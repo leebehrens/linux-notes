@@ -18,7 +18,7 @@ var notes = [
         "size": {{note.content.size}},
         "excerpt": "{{excerpt}}",
         "tags": [{%- if note.tags.size > 0 -%}"{{note.tags | join: '", "'}}"{%- endif -%}],
-        "pinned": {{%- if note.pinned == true -%}true{%- else -%}false{%- endif -%}}
+        "pinned": "{{%- if note.pinned == true -%}true{%- else -%}false{%- endif -%}}"
     }
     {%- assign comma = "," -%}
 {%- endfor -%}
