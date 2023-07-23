@@ -5,7 +5,7 @@ date: 2022-03-22
 tags: test
 excerpt: Hi there! \n <grin> &amp; "bear" it
 published: true
-pinned:
+pinned: false
 ---
 
 This is a test. (If excerpt is not set in the header, the first paragraph is used.)

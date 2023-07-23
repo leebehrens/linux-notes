@@ -90,7 +90,7 @@ mynotes.forEach(note => console.log(note.title, note.tags));
     let myNotes = getNotesByTag(myTag == starTag ? "" : myTag);
 
     myNotes.forEach(note => {
-      if (note.pinned) {
+      if (note.pinned == true) {
         let liNode = document.createElement("li");
         let aNode = document.createElement("a");
         aNode.setAttribute("href", note.url);
@@ -103,7 +103,7 @@ mynotes.forEach(note => console.log(note.title, note.tags));
     }
 
     myNotes.forEach(note => {
-      unless (note.pinned) {
+      if (note.pinned != true) {
         let liNode = document.createElement("li");
         let aNode = document.createElement("a");
         aNode.setAttribute("href", note.url);
