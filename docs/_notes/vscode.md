@@ -2,8 +2,8 @@
 title: Visual Studio Code
 layout: note
 date: 2022-03-19
+excerpt: Full featured cross-platform development tool.
 ---
-VSCode
 
 ## Installing
 

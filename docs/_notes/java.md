@@ -2,6 +2,7 @@
 title: Java/OpenJDK
 layout: note
 date: 2022-06-09
+excerpt: Installing current versions of JDKs.
 ---
 
 ## Installation

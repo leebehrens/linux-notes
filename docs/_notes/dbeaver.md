@@ -2,8 +2,9 @@
 title: DBeaver (community edition)
 layout: note
 date: 2022-04-23
+excerpt: Free universal database tool and SQL client.
 ---
-Free universal database tool and SQL client
+
 
 ## Download and install
 

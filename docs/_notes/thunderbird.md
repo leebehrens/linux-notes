@@ -3,8 +3,11 @@ title: Thunderbird
 layout: note
 date: 2022-03-22
 tags: email calendar contacts
+excerpt: Mail/news client with RSS, chat and integrated spam filter support.
+published: false
 ---
-Thunderbird
+
+{{site.callout_note}} I now install as a [flatpak](applications.html).
 
 Mail/news client with RSS, chat and integrated spam filter support. Debian likely has the current version of Thunderbird available (91.6).
 

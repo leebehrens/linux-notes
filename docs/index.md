@@ -39,6 +39,9 @@ mynotes.forEach(note => console.log(note.title, note.tags));
 </form>
 -->
 
+<ul id="pinnednoteslist">
+</ul>
+
 <ul id="noteslist">
 </ul>
 
@@ -47,25 +50,6 @@ mynotes.forEach(note => console.log(note.title, note.tags));
   function ready() {
     let myUrl = window.location.origin + window.location.pathname;
     let myTag = getTagParameter();
-
-    // alltags.forEach(tag => {
-    //   let liNode = document.createElement("li");
-    //   let aNode = document.createElement("a");
-
-    //   aNode.append(tag);
-
-    //   if (tag == myTag) {
-    //     aNode.setAttribute("href", myUrl);
-    //     let strongNode = document.createElement("strong");
-    //     strongNode.append(aNode);
-    //     liNode.append(strongNode);
-    //   }
-    //   else {
-    //     aNode.setAttribute("href", myUrl + "?tag=" + tag);
-    //     liNode.append(aNode);
-    //   }
-    //   tagslist.append(liNode);
-    // });
 
     const starTag = "all";
     myTag = myTag == "" || myTag == null ? starTag : myTag;
@@ -87,35 +71,21 @@ mynotes.forEach(note => console.log(note.title, note.tags));
       delim = " | ";
     });
 
+    // addNotes("pinnednoteslist", true);
+    // addNotes("noteslist", false);
+
     let myNotes = getNotesByTag(myTag == starTag ? "" : myTag);
 
     myNotes.forEach(note => {
-      if (note.pinned == true) {
-        let liNode = document.createElement("li");
-        let aNode = document.createElement("a");
-        aNode.setAttribute("href", note.url);
-        aNode.append(note.title);
-        liNode.append(aNode);
-        liNode.append(document.createElement("br"));
-        liNode.append(note.excerpt);
-        noteslist.append(liNode);
-      }
-    }
-
-    myNotes.forEach(note => {
-      if (note.pinned != true) {
-        let liNode = document.createElement("li");
-        let aNode = document.createElement("a");
-        aNode.setAttribute("href", note.url);
-        aNode.append(note.title);
-        liNode.append(aNode);
-        liNode.append(document.createElement("br"));
-        liNode.append(note.excerpt);
-        noteslist.append(liNode);
-      }
-    }
-
-    );
+      let liNode = document.createElement("li");
+      let aNode = document.createElement("a");
+      aNode.setAttribute("href", note.url);
+      aNode.append(note.title);
+      liNode.append(aNode);
+      liNode.append(document.createElement("br"));
+      liNode.append(note.excerpt);
+      noteslist.append(liNode);
+    });
 
   }
 

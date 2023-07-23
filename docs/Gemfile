@@ -22,6 +22,7 @@ group :jekyll_plugins do
   # Index page generator for Jekyll sites
   # gem "jekyll-index-pages"
   gem "jekyll-paginate"
+  gem "webrick"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

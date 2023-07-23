@@ -2,9 +2,8 @@
 title: Neofetch
 layout: note
 date: 2022-03-22
+excerpt: Shows Linux system information with distribution logo.
 ---
-
-Shows Linux system information with distribution logo
 
 ## Installation
 

@@ -3,12 +3,13 @@ title: Connecting Git to GitHub
 layout: note
 date: 2022-03-19
 tags: git ssh email
+excerpt: Like the name says.
 ---
 
 ## Configuring Git
 
 1. `$ git config --global user.name "Your Name"`
-2. `$ git config --global user.email "lsakfd"`
+2. `$ git config --global user.email "lsakfd"`  -- See your [GitHub Emails page](https://github.com/settings/emails), **Keep my email addresses private** section for the address to use.
 3. `$ git config --global pull.rebase false`
 
 > hint: Pulling without specifying how to reconcile divergent branches is \

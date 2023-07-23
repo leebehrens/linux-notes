@@ -3,7 +3,7 @@ title: Firmware update
 layout: note
 date: 2022-05-13
 tags: hardware thinkpad t470
-excerpt:
+excerpt: How to update firmware using `fwupd`.
 ---
 
 
@@ -60,7 +60,7 @@ $ sudo apt install fwupd
     report was uploaded, I was given a [website](https://github.com/fwupd/fwupd/wiki/LVFS-Triaged-Issue:-Failed-to-run-update-on-reboot) to visit for more
     information. I assume I would have been given the website had I declined to upload the failure report.
 
-## Resources
+## References
 - https://fwupd.org/
 - https://linoxide.com/how-to-update-firmware-on-ubuntu-using-fwupd/
 - https://github.com/fwupd/fwupd/wiki/LVFS-Triaged-Issue:-Failed-to-run-update-on-reboot

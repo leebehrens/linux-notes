@@ -37,3 +37,38 @@ var getNotesByTag = function(tag) {
         ? notes.filter(note => { return note.tags.indexOf(tag) >= 0 })
         : notes;
 }
+
+function isShowable(value, pinned) {
+    return pinned
+        ? value == true
+        : value != true;
+}
+
+var getNotesByTag = function(tag, pinned) {
+    return tag
+        ? notes.filter(note => { return isShowable(note.pinned, pinned) & note.tags.indexOf(tag) >= 0 })
+        : notes.filter(note => { return isShowable(note.pinned, pinned) });
+}
+
+var addNotes = function(pinned) {
+    let myNotes = getNotesByTag(myTag == starTag ? "" : myTag, pinned);
+
+    //var noteslist = $("#"+noteslistId);
+
+    myNotes.forEach(note => {
+      let isPinned = false;
+      if ( typeof note.pinned !== 'undefined' ) {
+        let isPinned = note.pinned == true;
+      }
+      let liNode = document.createElement("li");
+      let aNode = document.createElement("a");
+      aNode.setAttribute("href", note.url);
+      aNode.append(note.title);
+      liNode.append(aNode);
+      liNode.append(document.createElement("br"));
+      liNode.append(note.excerpt);
+      liNode.append(isPinned);
+      liNode.append(note.pinned);
+      noteslist.append(liNode);
+    });
+}

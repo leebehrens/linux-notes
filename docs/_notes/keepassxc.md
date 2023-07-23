@@ -2,13 +2,11 @@
 title: KeePassXC
 layout: note
 date: 2022-03-22
+excerpt: Secure password management.
+published: false
 ---
 
-Password management
-
-## Installation using Flatpak
-
-
+{{site.callout_note}} I now install as a [flatpak](applications.html).
 
 ## Installation using AppImage
 
