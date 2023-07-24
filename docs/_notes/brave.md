@@ -34,6 +34,8 @@ excerpt: Privacy-focused Chromium-based browser.
 I'm probably missing a few settings changes from the defaults. Some of these may already be the defaults.
 (I am unsure and am noting what I think looks good after having adjusted settings some weeks ago as I write this.)
 
+{{site.inline_note}} The links below do not work, even in Brave. Probably for security reasons.
+
 - [brave://settings/getStarted](brave://settings/getStarted)
     - On startup: *Open the New Tab page*
 
