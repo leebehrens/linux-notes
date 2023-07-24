@@ -1,7 +1,7 @@
 ---
 title: Rclone
 layout: note
-date: 2022-03-22
+date: 2023-07-24
 excerpt: Command line program to manage files on cloud storage.
 ---
 
@@ -33,8 +33,6 @@ More info at https://rclone.org/install/
 
 ## Configuration: OneDrive
 
-More info at https://rclone.org/onedrive/
-
 1. Run the Rclone configuration utility
     ```shell
     $ rclone config
@@ -60,13 +58,15 @@ More info at https://rclone.org/onedrive/
 
 11. `config_type> onedrive` (the number or quoted name corresponding to OneDrive Personal or Buisness)
 
-12. Use found root: `y/n> y`
+12. `config_driveid>` (select drive you want to use, or press Enter to accept the default)
 
-13. Default config is OK: `y/e/d> y`
+13. Drive OK? `y/n> y`
 
-14. All done, quit: `e/n/d/r/c/s/q> q`
+14. Keep this "onedrive" remote? `y/e/d> y`
 
-15. Test connection by listing top-level directories
+15. All done, quit: `e/n/d/r/c/s/q> q`
+
+16. Test connection by listing top-level directories
     ```shell
     $ rclone lsd onedrive:
     ```
@@ -76,66 +76,33 @@ More info at https://rclone.org/onedrive/
 $ rclone config reconnect onedrive:
 ```
 
-## Configuration: OneDrive mount point for OneDrive
+## Mount point: OneDrive
 
 The instructions here assume mounting from the root of cloud storage. For testing to ensure functionality,
 you may want to mount a single OneDrive directory with a few files.
 
-### Preparation
-
 An empty directory must be provided for the mount point. For example,
 ```shell
-$ mkdir ~/rclone/onedrive
+$ mkdir -p ~/rclone/onedrive
 ```
 
-### Manual mount as foreground process
-```shell
-$ rclone mount onedrive:/ /home/lee/rclone/onedrive --vfs-cache-mode full
-```
+## Automatic mounting using systemd
 
-The mount is active until the process is terminated (e.g, Ctrl+C)
+### Generic systemd service
 
-### Manual mount as background process
-```shell
-$ rclone mount onedrive:/ /home/lee/rclone/onedrive --vfs-cache-mode full &
-```
+This generic systemd service should work for all cloud services configured in rclone, provided the remote name and mount point directory name under `~/rclone` are the same.
 
-The mount is active until the process is terminated. For example,
+1. Install GNU privacy guard smart card support.
 
-1. ```shell
-    $ jobs –l
-    ```
-2. ```shell
-    $ fg
-    ```
+    {{site.inline_note}} I skipped this step, as it does not appear to be needed.
 
-3. The job is now running in the foreground, and can be terminated by pressing `Ctrl+C`.
-
-Using `kill –9 [jobnumber]` does not properly unmount the mount point. A manual unmount (see below) will be required.
-
-### Manual unmount
-
-If the mount point becomes disconnected, it may be necessary to manually unmount the mount point.
-
-```shell
-$ fusermount –u /home/lee/rclone/onedrive
-```
-
-### Automatic mounting using systemd
-
-https://rclone.org/commands/rclone_mount/#rclone-as-unix-mount-helper
-
-
-#### Configuration: generic systemd service
-
-1. Install GNU privacy guard smart card support. *Reviewing my notes for posting here, I am not sure if or why this is needed.*
     ```shell
     $ sudo apt install scdaemon
     ```
 
 2. Create a systemd user service file for Rclone mounting:
     ```shell
-    $ nano ~/.config/systemd/user/rclone@.service
+    $ micro ~/.config/systemd/user/rclone@.service
     ```
     ```ini
     # User service for Rclone mounting
@@ -183,12 +150,12 @@ https://rclone.org/commands/rclone_mount/#rclone-as-unix-mount-helper
     $ systemctl --user daemon-reload
     ```
 
-#### Managing the user service for the mount point
+### Managing the user service for the mount point
 
-In the commands below, `rclone@onedrive` can be used with any remote
-you might have created a mount point for. For example, you could have a
-Google Drive mount point named gdrive (`rclone@gdrive`), or a NextClound
-mount point named nextcloud (`rclone@nextcloud`).
+As indicated above, the following commands can be used with any remote, provided the remote name and mountpoint name are the same.
+The commands below refer to a Microsoft OneDrive remote named `onedrive` (`rclone@onedrive`).
+Similarly, you could use them with Google Drive mount point named `gdrive` (`rclone@gdrive`),
+or a NextClound mount point named `nextcloud` (`rclone@nextcloud`), etc.
 
 - Enable the service
     ```shell
@@ -219,3 +186,39 @@ mount point named nextcloud (`rclone@nextcloud`).
     ```shell
     $ cat /tmp/rclone-onedrive.log
     ```
+
+## Manual mounting/unmounting
+
+The following commands assume a remote named `onedrive` and a mount point at `~/rclone/onderive`.
+
+- Manual mount as foreground process
+    ```shell
+    $ rclone mount onedrive:/ /home/lee/rclone/onedrive --vfs-cache-mode full
+    ```
+
+    The mount is active until the process is terminated (e.g, Ctrl+C)
+
+- Manual mount as background process
+    ```shell
+    $ rclone mount onedrive:/ /home/lee/rclone/onedrive --vfs-cache-mode full &
+    ```
+
+    The mount is active until the process is terminated. For example,
+
+    ```shell
+    $ jobs –l
+    $ fg
+    ```
+
+    The job is now running in the foreground, and can be terminated by pressing `Ctrl+C`.
+
+    {{site.inline_caution}} Using `kill –9 [jobnumber]` does not properly unmount the mount point. A manual unmount will be required.
+
+- Manual unmount (useful should the mountpoint become disconnected)
+    ```shell
+    $ fusermount –u /home/lee/rclone/onedrive
+    ```
+
+## References
+- https://rclone.org/onedrive/
+- https://rclone.org/commands/rclone_mount/#rclone-as-unix-mount-helper

@@ -10,7 +10,7 @@ Here are many of the applications I use. Since upgrading to Debian 12, I now ins
 
 | Application | Flathub/Flatpak status                                                                                                              |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Brave       | Not supported; see installation instructions                                                                                        |
+| Brave       | Not supported; see [installation instructions](brave.html)                                                                          |
 | DBeaver CE  | Not supported; see [installation instructions](dbeaver.html)                                                                        |
 | Gimp        | Official                                                                                                                            |
 | Inkscape    | Official according to the [Inkscape FAQ](https://inkscape.org/learn/faq/)                                                           |
@@ -19,7 +19,7 @@ Here are many of the applications I use. Since upgrading to Debian 12, I now ins
 | Obsidian    | Official beta not officially supported, maintained by the community                                                                 |
 | Okular      | Official                                                                                                                            |
 | Rclone      | Not supported; see [installation instructions](rclone.html)                                                                         |
-| Signal      | Not supported; see installation instructions                                                                                        |
+| Signal      | Not supported; see [installation instructions](signal.html)                                                                         |
 | SyncThing   | Not supported; see installation instructions                                                                                        |
 | Thunderbird | Official, "still being worked on" according to [Mozilla Support](https://support.mozilla.org/en-US/kb/installing-thunderbird-linux) |
 | TimeShift   | Not supported; see installation instructions                                                                                        |

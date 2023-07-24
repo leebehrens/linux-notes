@@ -1,54 +1,34 @@
 ---
 title: Visual Studio Code
 layout: note
-date: 2022-03-19
+date: 2023-07-24
 excerpt: Full featured cross-platform development tool.
 ---
 
 ## Installing
 
-Source: https://code.visualstudio.com/docs/setup/linux
+A .deb package is available to automatically install the apt repository and signing key to enable auto-updating using the system's package manager. However, I favor the manual approach, so I understand better how and where things are installed.
 
-A .deb package is available to automatically install the apt repository and signing key to enable auto-updating using the system's package manager. However, I favor the manual approach, so I understand better how things are installed.
-
-1. Get the GPG keys for VSCode
+1. Obtain the official public package signing keys.
     ```shell
-    $ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+    wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/keyrings/packages.microsoft.asc
     ```
 
-2. Install the keys
+2. Create the apt source .list file.
     ```shell
-    $ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+    echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.microsoft.asc] https://packages.microsoft.com/repos/code stable main" > sudo tee /etc/apt/sources.list.d/vscode.list'
     ```
 
-3. Create the apt source file
+3. Refresh the apt package database and install.
     ```shell
-    $ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-    ```
+    sudo apt update
 
-4. Optional peek at the apt source file
-    ```shell
-    $ sudo cat /etc/apt/sources.list.d/vscode.list
-    ```
+    # the standard version
+    sudo apt install code
 
-5. No longer need this file
-    ```shell
-    $ rm -f packages.microsoft.gpg
+    # the bleeding edge
+    sudo apt install code-insiders
     ```
-
-6. This package is probably already installed
-    ```shell
-    $ sudo apt install apt-transport-https
-    ```
-
-7. Refresh the package index
-    ```shell
-    $ sudo apt update
-    ```
-
-8. Install the package
-    - Standard version: `$ sudo apt install code`
-    - The bleeding edge: `$ sudo apt install code-insiders`
 
 ## Preliminary customizations
 
@@ -116,3 +96,6 @@ A .deb package is available to automatically install the apt repository and sign
     "workbench.editor.titleScrollbarSizing": "large"
 }
 ```
+
+## References
+- https://code.visualstudio.com/docs/setup/linux
