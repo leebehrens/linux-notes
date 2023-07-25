@@ -253,14 +253,16 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  faraday (~> 2.7.10)
   github-pages
   jekyll-feed (~> 0.12)
   jekyll-paginate
   minima (~> 2.5)
+  nokogiri (~> 1.15.3)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
-  webrick
+  webrick (~> 1.8.1)
 
 BUNDLED WITH
    2.3.9
