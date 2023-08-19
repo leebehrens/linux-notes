@@ -17,7 +17,8 @@ var notes = [
         "date": "{{note.date | date: "%Y-%m-%d"}}",
         "size": {{note.content.size}},
         "excerpt": "{{excerpt}}",
-        "tags": [{%- if note.tags.size > 0 -%}"{{note.tags | join: '", "'}}"{%- endif -%}]
+        "tags": [{%- if note.tags.size > 0 -%}"{{note.tags | join: '", "'}}"{%- endif -%}],
+        "pinned": "{{pinned}}"
     }
     {%- assign comma = "," -%}
 {%- endfor -%}
@@ -40,8 +41,8 @@ var getNotesByTag = function(tag) {
 
 function isShowable(value, pinned) {
     return pinned
-        ? value == true
-        : value != true;
+        ? value == 'true'
+        : value != 'true';
 }
 
 var getNotesByTag = function(tag, pinned) {
@@ -58,7 +59,7 @@ var addNotes = function(pinned) {
     myNotes.forEach(note => {
       let isPinned = false;
       if ( typeof note.pinned !== 'undefined' ) {
-        let isPinned = note.pinned == true;
+        let isPinned = note.pinned == 'true';
       }
       let liNode = document.createElement("li");
       let aNode = document.createElement("a");

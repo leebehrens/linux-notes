@@ -34,14 +34,5 @@
         {{ content }}
       </section>
     </div>
-
-
-      <div class="footer">
-        <hr/>
-        {% if page.tags.size > 0 %}<section class="tags">tags: {{ page.tags | join: ", " }}</section>{% endif %}
-        {% if page.name != "about.md" %}<section class="about"><a href="{{'/about' | relative_url}}">About</a></section>{% endif %}
-        {% if page.date %}<section class="revision">Rev. {{ page.date | date: "%Y-%m-%d" }}</section>{% endif %}
-      </div>
-
   </body>
 </html>

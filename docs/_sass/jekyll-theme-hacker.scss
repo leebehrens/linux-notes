@@ -21,7 +21,8 @@ body {
   color: $body-foreground;
   font-size: 16px;
   line-height: 1.5;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: "Iosevka Slab Web", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-stretch: expanded;
 }
 
 /* General & 'Reset' Stuff */
@@ -64,7 +65,8 @@ header h1 {
   line-height: 1.5;
   margin: 0 0 0 -40px;
   font-weight: bold;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: "Iosevka Slab Web", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-stretch: expanded;
   color: $conifer;//$header;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
@@ -78,7 +80,7 @@ header h1 {
 
 
 header h1:before {
-  content: "~/";
+  content: "./";
   font-size: 24px;
 }
 
@@ -107,7 +109,8 @@ section img {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: "Iosevka Slab Web", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-stretch: expanded;
   color: $header;
   letter-spacing: -0.03em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
@@ -149,21 +152,9 @@ dt {
   font-weight: bold;
 }
 
-
-ul li {
-  //list-style-image:url('../images/bullet.png');
-  list-style: none;
-}
-
-ul li::before {
-  //content: "\2022";
-  content: "\25C7";
-  color: $header;
-  font-weight: bold;
-  display: inline-block;
-  width: 1.5em;
-  margin-left: -2.5em;
-}
+// ul li {
+//   list-style-image:url('../images/bullet.png');
+// }
 
 blockquote {
   color: $blockquote-color;
@@ -226,7 +217,8 @@ hr {
   border-bottom: 2px solid rgba(0, 0, 0, 0.7);
   border-top: 2px solid rgba(0, 0, 0, 1);
   color: rgba(255, 255, 255, 0.8);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Iosevka Slab Web", Helvetica, Arial, sans-serif;
+  font-stretch: expanded;
   font-weight: bold;
   font-size: 13px;
   text-decoration: none;
@@ -277,46 +269,4 @@ a {
 
 #a-title {
   text-decoration: none;
-}
-
-.footer {
-  font-size: 75%;
-  width: 90%;
-  max-width: $container-max-width;
-  margin: 0 auto;
-}
-
-.tags {
-  float: left;
-}
-
-.about {
-  text-align: center;
-}
-
-.revision {
-  float: right;
-}
-
-.notes-list ul {
-
-}
-
-.notes-list li {
-  padding: 0;
-}
-
-.notes-list td {
-  padding: 0;
-  vertical-align: top;
-}
-
-.notes-list-rj {
-  padding: 0;
-  text-align: right;
-}
-
-.sizenum {
-  float: right;
-  padding-right: 1em;
 }
