@@ -1,12 +1,12 @@
 ---
 title: Date and time formatting
 layout: note
-date: 2022-10-21
+date: 2023-10-21
 ---
 
 Changing the date and time format can be quirky.
 
-I  prefer my system use the following formats:
+I prefer my system use the following formats:
 - Date: YYYY-MM-DD preferred, with DMY order as a fallback
 - Time: 24-hour format
 
@@ -14,29 +14,29 @@ I  prefer my system use the following formats:
 
 ## `ls` timestamp format
 
-1. Edit `.bashrc`
+1. Edit `.bashrc`.
     ```shell
-    $ nano ~/.bashrc
+    $ micro ~/.bashrc
     ```
 
-2. Append the following lines and save
+2. Append the following lines and save.
     ```text
     # Change ls -l time format
     export TIME_STYLE=long-iso
     ```
 
-3. Optional: make the change take effect
+3. Optional: make the change take effect.
     ```shell
     $ source ~/.bashrc
     ```
 
 ## Linux time formatting
 
-{{site.callout_caution}} Skipping these steps will result in locale warning
+{{site.callout_note}} Skipping these steps will result in locale warning
 messages when various commonly used commands are run (e.g., `man`, `apt install`,
 etc.).
 
-1. Create the World (io_001) locale file
+1. Create the World (io_001) locale file.
     ```shell
     $ cd /etc/share/i18n/locales
     $ sudo cp en_US io_001
@@ -74,40 +74,40 @@ etc.).
 
 3. Update available locales
     ```shell
-    $ sudo nano /etc/locale.gen
+    $ sudo micro /etc/locale.gen
     ```
 
 <!--
 4. Uncomment (remove the leading #) from the line `en_IL UTF-8` and save.
 -->
-4. At the end of the file add this line
+4. At the end of the file add this line.
     ```
     io_001 UTF-8
     ```
 
-5. Regenerate locales
+5. Regenerate locales.
     ```shell
     $ sudo locale-gen
     ```
 
 ## KDE time formatting
 
-1. Press the `Super Key` and type `format` and select `Formats`
+1. Press the `Super Key` and type `format` and select `Formats`.
 
-2. Check Detailed Settings
+2. Check Detailed Settings.
 
-3. Change Time to World (io_001) <!-- Israel - English (en_IL) -->
+3. Change Time to World (io_001). <!-- Israel - English (en_IL) -->
 
-4. Click Apply
+4. Click Apply.
 
 ## KDE lock screen date formatting
 
-{{site.callout_note}} This one is likely to revert when a new system or KDE release is installed via apt.
+{{site.callout_note}} This is likely to revert when a new system or KDE release is installed via apt.
 
-1. Edit the lockscreen theme file
+1. Edit the lockscreen theme file.
     ```shell
     $ cd /usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/components
-    $ sudo nano Clock.qml
+    $ sudo micro Clock.qml
     ```
 
 2. Find the line containing "formatDate"
@@ -121,12 +121,35 @@ etc.).
 
 ## KDE login screen
 
-{{site.callout_note}} I have not yet discovered how to change the date format on the KDE login screen.
+{{site.callout_note}} This is likely to revert when a new system or KDE release is installed via apt.
+
+1. Edit the login screen theme file.
+    ```shell
+    $ cd /usr/share/sddm/themes/breeze/components
+    $ sudo micro Clock.qml
+    ```
+
+2. Find the line containing "formatTime"
+    ```text
+    text: Qt.formatTime(timeSource.data["Local"]["DateTime"])
+    ```
+    and change it to
+    ```text
+    text: Qt.formatTime(timeSource.data["Local"]["DateTime"], "hh:mm")    // no "hh:mm"
+    ```
+
+3. Find the line containing "formatDate"
+    ```text
+    text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
+    ```
+    and change it to
+    ```text
+    text: Qt.formatDate(timeSource.data["Local"]["DateTime"], "yyyy-MM-dd (ddd)")    // Qt.DefaultLocaleLongDate)
+    ```
 
 ## Activating the changes and trying them out
 
-Reboot to make the settings take effect. (Logging out and back will probably
-also work.)
+Reboot to make the settings take effect. (Logging out and back will probably also work.)
 
 1. KDE login screen: the date should be in YYYY-MM-DD form and the time in HH:MM form
 
