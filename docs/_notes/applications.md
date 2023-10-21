@@ -1,7 +1,7 @@
 ---
 title: Applications
 layout: note
-date: 2023-08-19
+date: 2023-10-21
 tags: flatpak
 excerpt: An index of applications I use and how I install them.
 ---

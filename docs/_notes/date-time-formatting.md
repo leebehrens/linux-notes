@@ -102,6 +102,8 @@ etc.).
 
 ## KDE lock screen date formatting
 
+{{site.callout_note}} This one is likely to revert when a new system or KDE release is installed via apt.
+
 1. Edit the lockscreen theme file
     ```shell
     $ cd /usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/components
