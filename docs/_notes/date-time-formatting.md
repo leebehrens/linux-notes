@@ -1,7 +1,7 @@
 ---
 title: Date and time formatting
 layout: note
-date: 2022-04-28
+date: 2022-10-21
 ---
 
 Changing the date and time format can be quirky.
@@ -108,9 +108,9 @@ etc.).
     $ sudo nano Clock.qml
     ```
 
-2. Find the line containing
+2. Find the line containing "formatDate"
     ```
-    text: Qt.formatDate(timeSource.data["Local"]["DateTime"], "yyyy-MM-dd (ddd)")   // Qt.DefaultLocaleLongDate)
+    text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
     ```
     and change it to
     ```
@@ -126,9 +126,9 @@ etc.).
 Reboot to make the settings take effect. (Logging out and back will probably
 also work.)
 
-1. KDE login screen: the date should be in DD Month YYYY form and the time in HH:MM form
+1. KDE login screen: the date should be in YYYY-MM-DD form and the time in HH:MM form
 
-2. KDE clock in System Tray: the date should be in DD/MM/YYYY form and the time in HH:MM form
+2. KDE clock in System Tray: the date should be in YYYY-MM-DD form and the time in HH:MM form
 
 3. Linux: the `date` command should show the date and time in `day YYYY-MM-DD HH:MM:SS` order
     ```

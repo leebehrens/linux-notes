@@ -24,7 +24,9 @@ Here are many of the applications I use. Since upgrading to Debian 12, I now ins
 | Thunderbird | Official, "still being worked on" according to [Mozilla Support](https://support.mozilla.org/en-US/kb/installing-thunderbird-linux) |
 | TimeShift   | Not supported; see installation instructions                                                                                        |
 | VSCode      | Not supported; see [installation instructions](vscode.html)                                                                         |
+| Waydroid    | Not supported; see [installation instructions](waydroid.html)                                                                       |
 | Xiphos      | Not officially supported, maintained by the community                                                                               |
+| Zettlr      | Not officially supported, maintained by the community                                                                                                                                    |
 
 <!--
 <details markdown=1>
