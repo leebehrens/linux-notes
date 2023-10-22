@@ -16,6 +16,7 @@ Here are many of the applications I use. Since upgrading to Debian 12, I now ins
 | Inkscape    | Official according to the [Inkscape FAQ](https://inkscape.org/learn/faq/)                                                           |
 | KeePassXC   | Official                                                                                                                            |
 | LibreOffice | Official                                                                                                                            |
+| LinApple | See [installation instructions](linapple.html) |
 | Obsidian    | Official beta not officially supported, maintained by the community                                                                 |
 | Okular      | Official                                                                                                                            |
 | Rclone      | Not supported; see [installation instructions](rclone.html)                                                                         |
