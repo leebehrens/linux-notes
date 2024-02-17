@@ -16,9 +16,11 @@ Here are many of the applications I use. Since upgrading to Debian 12, I now ins
 | Inkscape    | Official according to the [Inkscape FAQ](https://inkscape.org/learn/faq/)                                                           |
 | KeePassXC   | Official                                                                                                                            |
 | LibreOffice | Official                                                                                                                            |
-| LinApple | See [installation instructions](linapple.html) |
+| LinApple    | See [installation instructions](linapple.html)                                                                                      |
 | Obsidian    | Official beta not officially supported, maintained by the community                                                                 |
 | Okular      | Official                                                                                                                            |
+| Node.js     | [Installation instructions](nodejs.md)                                                                                              |
+| Poedit      | [Installation instructions](poedit.html)                                                                                            |
 | Rclone      | Not supported; see [installation instructions](rclone.html)                                                                         |
 | Signal      | Not supported; see [installation instructions](signal.html)                                                                         |
 | SyncThing   | Not supported; see installation instructions                                                                                        |
@@ -27,7 +29,7 @@ Here are many of the applications I use. Since upgrading to Debian 12, I now ins
 | VSCode      | Not supported; see [installation instructions](vscode.html)                                                                         |
 | Waydroid    | Not supported; see [installation instructions](waydroid.html)                                                                       |
 | Xiphos      | Not officially supported, maintained by the community                                                                               |
-| Zettlr      | Not officially supported, maintained by the community                                                                                                                                    |
+| Zettlr      | Not officially supported, maintained by the community                                                                               |
 
 <!--
 <details markdown=1>

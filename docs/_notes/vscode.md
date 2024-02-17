@@ -1,7 +1,8 @@
 ---
 title: Visual Studio Code
 layout: note
-date: 2023-07-24
+date: 2023-10-28
+tags: development
 excerpt: Full featured cross-platform development tool.
 ---
 
